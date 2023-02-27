@@ -1,6 +1,5 @@
 using Bingoapp.Data;
 using Bingoapp.Models;
-using System.Reflection;
 
 namespace Bingoapp.Rule
 {

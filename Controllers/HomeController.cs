@@ -18,38 +18,33 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-        var rule = new CardboardRule();
+        CardboardRule cardboardRule = new();
+        BallNumberRule ballNumberRule = new();
         var model = new
         {
-            CardboardOne = new Cardboard { Id = 1, Content = rule.GenerateCardboard() },
-            CardboardTwo = new Cardboard { Id = 2, Content = rule.GenerateCardboard() },
-            CardboardThree = new Cardboard { Id = 3, Content = rule.GenerateCardboard() },
-            CardboardFour = new Cardboard { Id = 4, Content = rule.GenerateCardboard() },
+            CardboardOne = new Cardboard { Id = 1, Content = cardboardRule.GenerateCardboard() },
+            CardboardTwo = new Cardboard { Id = 2, Content = cardboardRule.GenerateCardboard() },
+            CardboardThree = new Cardboard { Id = 3, Content = cardboardRule.GenerateCardboard() },
+            CardboardFour = new Cardboard { Id = 4, Content = cardboardRule.GenerateCardboard() },
         };
+        ballNumberRule.ClearNumbersGenerated();
         return View(model);
     }
 
     [HttpGet]
     public async Task<IActionResult> GenerateNumber()
     {
-        var rule = new BallNumberRule();
-        var ballNumber = await rule.GetUniqueBallNumberAsync(_context);
+        BallNumberRule ballNumberRule = new();
+        var ballNumber = await ballNumberRule.GetUniqueBallNumberAsync(_context);
         return Content(ballNumber.ToString());
     }
 
     [HttpPost]
     public async Task<IActionResult> Winners([FromBody] List<int> winners)
     {
-        try
-        {
-            var rule = new CardboardHistoryRule();
-            await rule.AddWinnersAsync(_context, winners);
-            return Ok();
-        }
-        catch (Exception)
-        {
-            return StatusCode(500);
-        }
+        CardboardHistoryRule cardboardHistoryRule = new();
+        await cardboardHistoryRule.AddWinnersAsync(_context, winners);
+        return Ok();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
