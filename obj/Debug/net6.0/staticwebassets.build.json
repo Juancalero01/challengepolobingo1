@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "52eWLNZ4VYySS7ygEXkuVvfaK/5rxbIoHv15VqGqRT8=",
+  "Hash": "tt8/zexlh60YBRCpxTNUFYA375UGiGng8D5cE+Br2oU=",
   "Source": "Bingoapp",
   "BasePath": "_content/Bingoapp",
   "Mode": "Default",
@@ -83,23 +83,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "D:\\Proyectos\\Bingo folder\\Bingoapp\\wwwroot\\img\\logotype.png",
-      "SourceId": "Bingoapp",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Proyectos\\Bingo folder\\Bingoapp\\wwwroot\\",
-      "BasePath": "_content/Bingoapp",
-      "RelativePath": "img/logotype.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\logotype.png"
     },
     {
       "Identity": "D:\\Proyectos\\Bingo folder\\Bingoapp\\wwwroot\\js\\site.js",

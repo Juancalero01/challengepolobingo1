@@ -1,10 +1,22 @@
-# challengepolobingo1
+![Logo](https://minaclavero.polotecnologico.ar/assets/img/logo.webp)
 
-Commands: 
+# Bingoapp
 
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+Entrega final del bingo para el polo tecnológico mina clavero
 
-Init:
+## Database
 
-dotnet run
+Migrar base de datos, si existe una carpeta migrations utilizar el segundo comando.
+
+```bash
+  dotnet ef migrations add InitialCreate
+  dotnet ef database update
+```
+
+## Run
+
+Para iniciar la aplicación.
+
+```bash
+  dotnet run
+```
