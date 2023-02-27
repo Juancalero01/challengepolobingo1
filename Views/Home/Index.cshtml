@@ -1,0 +1,112 @@
+﻿@{
+  ViewData["Title"] = "BingoApp";
+}
+<div class="row py-4">
+  <div class="col">
+    <div class="text-center">
+      <p id="seeResult" class="display-1 fw-bold">00</p>
+      <button id="throwBall" class="btn btn-dark" type="button">
+        Obtener número      
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row gx-5 gy-5 py-5">
+  <div class="col-12 col-lg-6">
+    <div class="row">
+      <div class="col p-3 m-0 border text-center h5">Carton <span class="cardboardOne">@Model.CardboardOne.Id</span></div>
+    </div>
+    @for (int i = 0; i < Model.CardboardOne.Content.GetLength(0); i++)
+    {
+        <div class="row">
+        @for (int j = 0; j < Model.CardboardOne.Content.GetLength(1); j++)
+        {
+          @if (@Model.CardboardOne.Content[i, j] == 0)
+          {
+            <div class="col p-3 m-0 border text-center h5 bg-light"></div>            
+          }
+          else
+          {
+            <div class="col p-3 m-0 border text-center h5 cardboardOne">@Model.CardboardOne.Content[i, j].ToString("D2")</div>            
+          }
+        }
+        </div>
+    }
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="row">
+      <div class="col p-3 m-0 border text-center h5">Carton <span class="cardboardTwo">@Model.CardboardTwo.Id</span></div>
+    </div>
+    @for (int i = 0; i < Model.CardboardTwo.Content.GetLength(0); i++)
+    {
+        <div class="row">
+        @for (int j = 0; j < Model.CardboardTwo.Content.GetLength(1); j++)
+        {
+          @if (@Model.CardboardTwo.Content[i, j] == 0)
+          {
+            <div class="col p-3 m-0 border text-center h5 bg-light"></div>            
+          }
+          else
+          {
+            <div class="col p-3 m-0 border text-center h5 cardboardTwo">@Model.CardboardTwo.Content[i, j].ToString("D2")</div>            
+          }
+        }
+        </div>
+    }
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="row">
+      <div class="col p-3 m-0 border text-center h5">Carton <span class="cardboardThree">@Model.CardboardThree.Id</span></div>
+    </div>
+    @for (int i = 0; i < Model.CardboardThree.Content.GetLength(0); i++)
+    {
+        <div class="row">
+        @for (int j = 0; j < Model.CardboardThree.Content.GetLength(1); j++)
+        {
+          @if (@Model.CardboardThree.Content[i, j] == 0)
+          {
+            <div class="col p-3 m-0 border text-center h5 bg-light"></div>            
+          }
+          else
+          {
+            <div class="col p-3 m-0 border text-center h5 cardboardThree">@Model.CardboardThree.Content[i, j].ToString("D2")</div>            
+          }
+        }
+        </div>
+    }
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="row">
+      <div class="col p-3 m-0 border text-center h5">Carton <span class="cardboardFour">@Model.CardboardFour.Id</span></div>
+    </div>
+    @for (int i = 0; i < Model.CardboardFour.Content.GetLength(0); i++)
+    {
+        <div class="row">
+        @for (int j = 0; j < Model.CardboardFour.Content.GetLength(1); j++)
+        {
+          @if (@Model.CardboardFour.Content[i, j] == 0)
+          {
+            <div class="col p-3 m-0 border text-center h5 bg-light"></div>            
+          }
+          else
+          {
+            <div class="col p-3 m-0 border text-center h5 cardboardFour">@Model.CardboardFour.Content[i, j].ToString("D2")</div>            
+          }
+        }
+        </div>
+    }
+  </div>
+</div>
+
+
+<div class="modal fade" id="winnersModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-center">Ganadores</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="winnersModalBody"></div>
+    </div>
+  </div>
+</div>
